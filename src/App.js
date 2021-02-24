@@ -13,8 +13,16 @@ function App() {
     const timeout = setTimeout(() => {
       setSrcDoc(`
   <html>
-  <body>${html}</body>
-  <style>${css}</style>
+  <body>${
+    html === ''
+      ? '...Start out by typing some code in the Editors above & it will automatically get rendered here for preview. '
+      : ''
+  } ${html}</body>
+  <style>${
+    html === ''
+      ? 'body { font-family: sans-serif; color: #2fc2b6; padding-top: 0.7rem; font-size: 15px; font-weight: 100;}'
+      : ''
+  } ${css}</style>
   <script>${js}</script>
   </html>
   `);
