@@ -1,6 +1,6 @@
 import './App.css';
 import Editor from './Editor';
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import useLocalStorage from './hooks/useLocalStorage';
 
 function App() {
@@ -21,7 +21,7 @@ function App() {
     }, 400);
 
     return () => clearTimeout(timeout);
-  }, [js, html, css]);
+  }, [js, html, css, setSrcDoc]);
 
   return (
     <>
